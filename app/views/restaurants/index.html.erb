@@ -3,6 +3,9 @@
 </h1>
 <ol>
   <% @restaurants.each do |restaurant| %>
-    <li><%= link_to restaurant.name, restaurant_path %> (<i><%= restaurant.category.capitalize%></i>)</li>
+    <li>
+      <%= link_to restaurant.name, "restaurants/#{restaurant.id}", :class => "text-decoration-none" %>
+      (<i><%= restaurant.category.capitalize%></i>)
+    </li>
   <% end %>
 </ol>
