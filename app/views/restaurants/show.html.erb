@@ -10,13 +10,5 @@
 <p>
   Tel No: <%= @restaurant.phone_number %>
 </p>
-<% if @restaurant.reviews.empty? %>
-  <p><i>This restaurant has no reviews</i></p>
-<% else %>
-  <ul>
-    <% @restaurant.reviews.each do |review| %>
-      <li><strong><%= review.rating %>/5</strong> <%= review.content %></li>
-    <% end %>
-  <% end %>
-</ul>
 <%= link_to "Back to Restaurants", restaurants_path %>
+<%= link_to "Reviews", "/restaurants/#{@restaurant.id}/reviews" %>

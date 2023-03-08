@@ -1,0 +1,17 @@
+<h1>
+  <%= @restaurant.name %> Reviews
+</h1>
+<% if @reviews.empty? %>
+  <p><i>This restaurant has no reviews</i></p>
+<% else %>
+  <ul>
+    <% @reviews.each do |review| %>
+      <li><strong><%= review.rating %>/5</strong> <%= review.content %></li>
+    <% end %>
+  <% end %>
+</ul>
+<%= link_to "Add Review", new_restaurant_review_path %>
+<div>
+  <%= link_to "Back to #{@restaurant.name}", "/restaurants/#{@restaurant.id}" %>
+</div>
+<%= link_to "Back to Restaurants", restaurants_path %>
