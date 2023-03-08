@@ -12,3 +12,9 @@
 </p>
 <%= link_to "Back to Restaurants", restaurants_path %>
 <%= link_to "Reviews", "/restaurants/#{@restaurant.id}/reviews" %>
+<div>
+  <%= link_to "Delete",
+  restaurant_path(@restaurant),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  %>
+</div>
